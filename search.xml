@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>java基础</title>
+      <link href="/zhanglu/2019/11/19/java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/"/>
+      <url>/zhanglu/2019/11/19/java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/</url>
+      
+        <content type="html"><![CDATA[<ol><li>请说说面向对象的特征<br>面向对象主要包括封装、继承、多态、抽象。<br>封装，给对象提供了隐藏内部特性和行为的能力。对象提供一些能被其他对象访问的方法来改变它内部的<br>数据。在 Java 当中，有 4 种修饰符： default、public、private 和 protected 。每一种修饰符给其他<br>的位于同一个包或者不同包下面</li></ol><p>对象赋予了不同的访问权限。<br>通过隐藏对象的属性来保护对象内部的状态。<br>提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展。<br>禁止对象之间的不良交互提高模块化。<br>继承，给对象提供了从基类获取字段和方法的能力。继承提供了代码的重用行，也可以在不修改类的情况<br>下给现存的类添加新特性。对于接口可以多继承, 但是对于类只能是单继承<br>多态，是编程语言给不同的底层数据类型做相同的接口展示的一种能力。一个多态类型上的操作，可以应<br>用到其他类型的值上面。<br>抽象，是把想法从具体的实例中分离出来的步骤，因此，要根据他们的功能而不是实现细节来创建类。</p><table><thead><tr><th></th><th>面向过程 优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源。比如，单片机、</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><p>嵌入式开发、Linux/Unix 等一般采用面向过程开发，性能是最重要的因素。<br>缺点：没有面向对象易维护、易复用、易扩展。</p><table><thead><tr><th></th><th>面向对象 优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><p>系统，使系统更加灵活、更加易于维护。<br>缺点：性能比面向过程低。</p><ol start="3"><li><p>重载和重写的区别</p><p>参数类型、个数、顺序至少有一个不相同。<br>不能重载只有返回值不同的方法名。<br>存在于父类和子类、同类中。<br>方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时<br>的多态性。重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者<br>二者都不同）则视为重载；重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相<br>同的参数列表，有兼容的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常<br>（里氏代换原则）。重载对返回类型没有特殊的要求，不能根据返回类型进行区分。</p></li><li><p>什么是构造方法？什么是构造方法重载？<br>1）构造方法<br>当新对象被创建的时候，构造方法会被调用。每一个类都有构造方法。在程序员没有给类提供构造方法的<br>情况下，Java 编译器会为这个类创建一个默认的构造方法。<br>2）构造方法重载<br>Java 中构造方法重载和方法重载很相似。可以为一个类创建多个构造方法。每一个构造方法必须有它自己<br>唯一的参数列表。</p></li><li><p>什么是值传递和引用传递<br>值传递，是对基本型变量而言的，传递的是该变量的一个副本，改变副本不影响原变量。<br>引用传递，一般是对于对象型变量而言的，传递的是该对象地址的一个副本，并不是原对象本身。<br>一般认为，Java 内的传递都是值传递，Java 中实例对象的传递是引用传递。</p></li><li><p>是否可以在 static 环境中访问非 static 变量？<br>static 变量在 Java 中是属于类的，它在所有的实例中的值是一样的。当类被 Java 虚拟机载入的时候，<br>会对 static 变量进行初始化。<br>如果你的代码尝试不用实例来访问非 static 的变量，编译器会报错，因为这些变量还没有被创建出来，还<br>没有跟任何实例关联上。</p></li><li><p>String、StringBuffer、StringBuilder 的区别<br>Java 平台提供了两种类型的字符串：String 和 StringBuffer/StringBuilder，它们可以储存和操作字符串。<br>String ，是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。每次对 String 类型进<br>叩丁狼教育 <a href="http://www.wolfcode.cn" target="_blank" rel="noopener">www.wolfcode.cn</a> 3<br>行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。<br>StringBuffer/StringBuilder 类，表示的字符串对象可以直接进行修改。StringBuilder 是 Java 5 中引入<br>的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有<br>被 synchronized 修饰，因此它的效率也比 StringBuffer 要高。<br>\8. String s = new String(“xyz”) 会创建几个对象<br>首先，在 String 池内找，找到 “xyz” 字符串，不创建 “xyz” 对应的 String 对象，否则创建一个对象。<br>然后，遇到 new 关键字，在内存上创建 String 对象，并将其返回给 s ，又一个对象。</p></li><li><p>equals 与 == 的区别？<br> 值类型（int,char,long,boolean 等）的话<br>都是用 == 判断相等性。<br> 对象引用的话<br>== 判断引用所指的对象是否是同一个。<br>equals 方法，是 Object 的成员函数，有些类会覆盖(override) 这个方法，用于判断对象的等价性。</p></li><li><p>final、finally、finalize 的区别<br> final<br>final ，是修饰符关键字。<br>如果一个类被声明为 final ，意味着它不能再派生出新的子类，不能作为父类被继承。因此一个类不能既<br>被声明为 abstract 的，又被声明为 final 的。<br>将变量或方法声明为 final ，可以保证它们在使用中不被改变。被声明为 final 的变量必须在声明时给定<br>初值，而在以后的引用中只能读取，不可修改。被声明为 final 的方法也同样只能使用，不能重写。<br>另外，在早期的 Java 实现版本中，会将 final 方法转为内嵌调用。但是如果方法过于庞大，可能看不到<br>内嵌调用带来的任何性能提升（现在的 Java 版本已经不需要使用 final 方法进行这些优化了）。类中所<br>有的 private 方法都隐式地指定为 final 。<br>finally<br>在异常处理时提供 finally 块来执行任何清除操作。如果抛出一个异常，那么相匹配的 catch 子句就会执<br>行，然后控制就会进入 finally 块（如果有的话）。<br>在以下 4 种特殊情况下，finally 块不会被执行：<br>在 finally 语句块中发生了异常。<br>在前面的代码中用了 System.exit() 退出程序。<br>程序所在的线程死亡  </p><p>关闭 CPU 。<br>finalize<br>finalize ，是方法名。<br>Java 允许使用 #finalize() 方法，在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方<br>法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。<br>它是在 Object 类中定义的，因此所有的类都继承了它。<br>子类覆盖 finalize() 方法，以整理系统资源或者执行其他清理工作。<br>#finalize() 方法，是在垃圾收集器删除对象之前对这个对象调用的。</p></li><li><p>finally 中的代码一定会执行吗?<br>不一定, 一般 finally 是结合 try 一起使用,如果在 try 代码块中出现异常信息的话会执行 fanally 中的代码,<br>如果是在 try 外面出现的异常, 是不会执行 finally 里面的代码的<br>如果是通过 System.exit(0) 直接退出虚拟机的话, 那么也不会执行 finally 的代码块</p></li><li><p>抽象类和接口有什么区别<br>从设计层面来说，抽象是对类的抽象，是一种模板设计，接口是行为的抽象，是一种行为的规范。<br>Java 提供和支持创建抽象类和接口。它们的实现有共同点，不同点在于：接口中所有的方法隐含的都是抽<br>象的，而抽象类则可以同时包含抽象和非抽象的方法。<br>类可以实现很多个接口，但是只能继承一个抽象类。类可以不实现抽象类和接口声明的所有方法，当然，<br>在这种情况下，类也必须得声明成是抽象的。<br>抽象类可以在不提供接口方法实现的情况下实现接口。<br>Java 接口中声明的变量默认都是 final 的。抽象类可以包含非 final 的变量。<br>Java 接口中的成员函数默认是 public 的。抽象类的成员函数可以是 private，protected 或者是<br>public 。<br>接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含 #main(String[] args)<br>方法的话是可以被调用的。</p></li><li><p>类的实例化顺序<br>初始化顺序如下：<br> 父类静态变量<br> 父类静态代码块<br> 子类静态变量、<br>叩丁狼教育 <a href="http://www.wolfcode.cn" target="_blank" rel="noopener">www.wolfcode.cn</a> 5<br> 子类静态代码块<br> 父类非静态变量（父类实例成员变量）<br> 父类构造函数<br> 子类非静态变量（子类实例成员变量）<br> 子类构造函数  </p></li><li><p>集合的体系  </p></li></ol><p><img src="C:%5CUsers%5Czhangdaxian%5CDesktop%5Cjava%E5%9F%BA%E7%A1%80.jpg.bmp" alt=""></p><p>15.我们能否使用任何类作为Map的key<br>我们可以使用任何类作为Map的key，然而在使用它们之前，需要考虑以下几点：<br>1、如果类重写了equals方法，它也应该重写hashcode方法。<br>2、类的所有实例需要遵循与equals和hashcode相关的规则。<br>3、如果一个类没有使用equals，你不应该在hashcode中使用它。<br>4、用户自定义key类的最佳实践是使之为不可变的，这样，hashcode值可以被缓存起来，拥有更好的性能。不可变的类也可以确保hashcode和equals在未来不会改变，这样就会解决与可变相关的问题了。<br>16.HashMap的底层实现<br>HashMap基于hashing原理，我们通过put()和get()方法储存和获取对象。当我们将键值对传递给put()方法时，它调用键对象的hashCode()方法来计算hashcode，让后找到bucket位置来储存值对象。当获取对象时，通过键对象的equals()方法找到正确的键值对，然后返回值对象。HashMap使用链表来解决碰撞问题，当发生碰撞了，对象将会储存在链表的下一个节点中。HashMap在每个链表节点中储存键值对对象。<br>17.error和exception的区别<br>Exception和Error都是继承于Throwable类，在Java中只有Throwable类型的实例才可以被抛出（throw）或者捕获（catch），它是异常处理机制的基本组成类型。<br>Exception和Error体现了JAVA这门语言对于异常处理的两种方式。<br>Exception是java程序运行中可预料的异常情况，咱们可以获取到这种异常，并且对这种异常进行业务外的处理。<br>Error是java程序运行中不可预料的异常情况，这种异常发生以后，会直接导致JVM不可处理或者不可恢复的情况。所以这种异常不可能抓取到，比如OutOfMemoryError、NoClassDefFoundError等。<br>其中的Exception又分为检查性异常和非检查性异常。两个根本的区别在于，检查性异常必须在编写代码时，使用trycatch捕获（比如：IOException异常）。非检查性异常在代码编写使，可以忽略捕获操作（比如：ArrayIndexOutOfBoundsException），这种异常是在代码编写或者使用过程中通过规范可以避免发生的。切记，Error是Throw不是Exception。<br>8.遍历Map集合的几种方式<br>通过Map.keySet遍历key和value<br>通过Map.entrySet遍历key和value<br>通过Map.entrySet使用iterator遍历key和value</p><p>通过Map.values()遍历所有的value，但不能遍历key<br>9.ArrayList和LinkedList的区别<br>ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。<br>对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。<br>对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。<br>0.如何删除List中的某个元素<br>在删除list集合中的元素的时候,我们不能直接在普通的循环遍历的时候进行删除操作,应该使用迭代器的方式进行元素的删除,这里我们可以使用迭代器遍历,通过迭代器的删除方法进行删除操作</p><p><img src="C:%5CUsers%5Czhangdaxian%5CDesktop%5C%E8%BF%AD%E4%BB%A3%E5%99%A8.jpg.bmp" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> java基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>创建对象的5种方式</title>
       <link href="/zhanglu/2019/11/17/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/zhanglu/2019/11/17/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
@@ -11,6 +38,20 @@
         <content type="html"><![CDATA[<p>创建对象的5种方式：</p><p>使用new关键字：<br>  这是我们最常见的也是最简单的创建对象的方式，通过这种方式我们还可以调用任意的够赞函数（无参的和有参的。比如：<br>##Student student = new Student();使用Class类的newInstance方法：我们也可以使用Class类的newInstance方法创建<br>对象，这newInstance方法调用无参的构造器创建对象，如：Student student2 = (Student)Class.forName(“根路径.St<br>###udent”).newInstance();或者：Student stu = Student.class.newInstance();</p><p>使用Constructor类的newInstance方法：<br>  本方法和Class类的newInstance方法很像，java.lang.relect.Constructor类里也有一个newInstance方法可以创建对象<br>。我们可以通过这个newInstance方法调用有参数的和私有的构造函数。如Constructor<Student> constructor ###=<br>Student.class.getInstance(); Student stu = constructor.newInstance();　这两种newInstance的方法就是大家<br>所说的反射，事实上Class的newInstance方法内部调用Constructor的newInstance方法。这也是众多框架SpringHibernate<br>、Struts等使用后者的原因。</p><p>使用Clone的方法：<br>无论何时我们调用一个对象的clone方法，JVM就会创建一个新的对象，将前面的对象的内容全部拷贝进去，用clone方法创建对<br>象并不会调用任何构造函数。要使用clone方法，我们必须先实现Cloneable接口并实现其定义的clone方法。如：Student stu2<br> = ###<Student>stu.clone();这也是原型模式的应用。使用反序列化：当我们序列化和反序列化一个对象，JVM会给我们创建<br>一个单独的对象，在反序列化时，JVM创建对象并不会调用任何构造函数。为了反序列化一个对象，我们需要让我们的类实现S<br>erializable接口。如：ObjectInputStream in = new ObjectInputStream (new FileInputStream(“data.obj”)); ###Student<br>stu3 = ###(Student)in.readObject();</p>]]></content>
       
       
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 创建对象的5种方式 </tag>
+            
+        </tags>
       
     </entry>
     
