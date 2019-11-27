@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>javaDemo的不知道第几天</title>
+      <link href="/zhanglu/2019/11/27/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%20-%20%E5%89%AF%E6%9C%AC/"/>
+      <url>/zhanglu/2019/11/27/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%20-%20%E5%89%AF%E6%9C%AC/</url>
+      
+        <content type="html"><![CDATA[<p>  public void chageDemo1(int a){</p><p>  a=123;</p><p>}</p><p>  public void chageDemo2(Person person){</p><p>  person.setPersonName(“haha”);</p><p>}</p><p>  public void chageDemo1(String a){</p><p>  a=”xxxxx”;</p><p>}</p><p>…..main(String[args]){</p><p>int a=30;</p><p>chageDemo1(a);</p><p>System.out.println(a);</p><p>Person person=new Person(“abc”);</p><p>chageDemo2(person);</p><p>System.out.println(person.getPersonName());</p><p>String b=”abc”;</p><p>chageDemo2(b);</p><p>System.out.println(b);</p><p>}</p><p>以上输出为 30 ，xxxxx, abc</p><p>因为main方法的a调用chageDemo1()，只是复制了a的值赋给了方法中的a，因为mian中的a的作用域只在main中，所以a还是30并没有发生变化</p><p>当调用chageDemo2()时 传入的是地址，chageDemo2中的person的指针页指向那个地址，所以改变的是地址中的值，输出是xxxxx</p><p>String创建时先会到StringPool中找是否有abc 如果没有就创建一个，有就直接用，当调用chageDemo3时，先会创建一个新的string指向那个新的值，而原来的string还是指向原来的那个pool中的abc</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 马虎眼 </tag>
+            
+            <tag> 准备的不知道第几天 </tag>
+            
+            <tag> 垃圾 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>创建对象的5种方式</title>
+      <link href="/zhanglu/2019/11/27/javaDemo%E7%9A%84%E4%B8%8D%E7%9F%A5%E9%81%93%E7%AC%AC%E5%87%A0%E5%A4%A9/"/>
+      <url>/zhanglu/2019/11/27/javaDemo%E7%9A%84%E4%B8%8D%E7%9F%A5%E9%81%93%E7%AC%AC%E5%87%A0%E5%A4%A9/</url>
+      
+        <content type="html"><![CDATA[<p>创建对象的5种方式：</p><p>使用new关键字：<br>  这是我们最常见的也是最简单的创建对象的方式，通过这种方式我们还可以调用任意的够赞函数（无参的和有参的。比如：<br>##Student student = new Student();使用Class类的newInstance方法：我们也可以使用Class类的newInstance方法创建<br>对象，这newInstance方法调用无参的构造器创建对象，如：Student student2 = (Student)Class.forName(“根路径.St<br>###udent”).newInstance();或者：Student stu = Student.class.newInstance();</p><p>使用Constructor类的newInstance方法：<br>  本方法和Class类的newInstance方法很像，java.lang.relect.Constructor类里也有一个newInstance方法可以创建对象<br>。我们可以通过这个newInstance方法调用有参数的和私有的构造函数。如Constructor<Student> constructor ###=<br>Student.class.getInstance(); Student stu = constructor.newInstance();　这两种newInstance的方法就是大家<br>所说的反射，事实上Class的newInstance方法内部调用Constructor的newInstance方法。这也是众多框架SpringHibernate<br>、Struts等使用后者的原因。</p><p>使用Clone的方法：<br>无论何时我们调用一个对象的clone方法，JVM就会创建一个新的对象，将前面的对象的内容全部拷贝进去，用clone方法创建对<br>象并不会调用任何构造函数。要使用clone方法，我们必须先实现Cloneable接口并实现其定义的clone方法。如：Student stu2<br> = ###<Student>stu.clone();这也是原型模式的应用。使用反序列化：当我们序列化和反序列化一个对象，JVM会给我们创建<br>一个单独的对象，在反序列化时，JVM创建对象并不会调用任何构造函数。为了反序列化一个对象，我们需要让我们的类实现S<br>erializable接口。如：ObjectInputStream in = new ObjectInputStream (new FileInputStream(“data.obj”)); ###Student<br>stu3 = ###(Student)in.readObject();</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 创建对象的5种方式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java基础</title>
       <link href="/zhanglu/2019/11/19/java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/"/>
       <url>/zhanglu/2019/11/19/java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/</url>
